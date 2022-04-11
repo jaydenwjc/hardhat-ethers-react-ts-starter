@@ -3,17 +3,17 @@ pragma solidity ^0.8.0;
 
 contract DutchAuction {
 
-    uint256 reservePrice;
-    address judgeAddress;
-    uint256 numBlocksAuctionOpen;
-    uint256 offerPriceDecrement;
+    uint256 public reservePrice;
+    address public judgeAddress;
+    uint256 public numBlocksAuctionOpen;
+    uint256 public offerPriceDecrement;
 
     address payable public ownerAddress;
-    uint startBlockNumber;
-    bool endAuction;
-    address payable winnerAddress;
-    uint256 winningPrice;
-    bool callFinalize;
+    uint public startBlockNumber;
+    bool public endAuction;
+    address payable public winnerAddress;
+    uint256 public winningPrice;
+    bool public callFinalize;
 
     constructor(uint256 _reservePrice, address _judgeAddress, uint256 _numBlocksAuctionOpen, uint256 _offerPriceDecrement) public {
         reservePrice = _reservePrice;

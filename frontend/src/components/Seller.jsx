@@ -153,3 +153,7 @@ export function Seller() {
     </>
   )
 }
+
+export function passToContract({dutchAuction, owner}) {
+  return dutchAuction, owner;
+}
