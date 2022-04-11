@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledBidderDiv = styled.div`
+const StyledDiv = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 135px 2.7fr 1fr;
@@ -19,7 +19,7 @@ const StyledInput = styled.input`
   line-height: 2fr;
 `;
 
-const StyledFinalizeButton = styled.button`
+const StyledtButton = styled.button`
   width: 180px;
   height: 2rem;
   border-radius: 1rem;
@@ -31,12 +31,12 @@ const StyledFinalizeButton = styled.button`
 export function Judge() {
   return (
     <>
-      <StyledBidderDiv>
+      <StyledDiv>
         
-      </StyledBidderDiv>
-      <StyledFinalizeButton
+      </StyledDiv>
+      <StyledtButton
       
-      >Finalize</StyledFinalizeButton>
+      >Finalize</StyledtButton>
     </>
   )
 }
