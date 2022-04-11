@@ -4,6 +4,7 @@ import { Greeter } from './components/Greeter';
 import { SectionDivider } from './components/SectionDivider';
 import { SignMessage } from './components/SignMessage';
 import { WalletStatus } from './components/WalletStatus';
+import {TabGroup} from './components/TabGroup'
 
 const StyledAppDiv = styled.div`
   display: grid;
@@ -17,7 +18,7 @@ export function App() {
       <SectionDivider />
       <WalletStatus />
       <SectionDivider />
-      <SignMessage />
+      <TabGroup />
       <SectionDivider />
       <Greeter />
     </StyledAppDiv>
