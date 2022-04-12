@@ -7,7 +7,6 @@ import {
 import styled from "styled-components";
 import DutchAuctionArtifact from '../artifacts/contracts/DutchAuction.sol/DutchAuction.json'
 import { Seller } from './Seller';
-import { passToContract } from './Seller';
 
 const StyledDiv = styled.div`
   display: grid;
@@ -22,22 +21,33 @@ const StyledLabel = styled.label`
   font-weight: bold;
 `;
 
-export function ShowDutchAuction() {
+export function ShowDutchAuction(props) {
   const context = useWeb3React();
   const { library, active } = context;
-
-  const dutchAuctionContract = new ethers.ContractFactory(
-    DutchAuctionArtifact.abi,
-    DutchAuctionArtifact.bytecode,
-  )
+  const [signer, setSigner] = useState();
+  const [contract, setContract] = useState();
+  useEffect(() => {
+    if (!library) {
+      setSigner(undefined);
+      return;
+    }
+    
+    setSigner(library.getSigner());
+  }, [library]);
   
-  const contract = passToContract;
-
+  // useEffect(() => {
+  //   if (!library) {
+  //     setContract(undefined);
+  //     return;
+  //   }
+  //   const dutchAuctionContract = new ethers.Contract(address, DutchAuctionArtifact.abi, signer)
+  //   setContract(dutchAuctionContract);
+  // }, [signer]);
+  
   return (
     <>
       <StyledDiv>
-        <StyledLabel>Dutch Auction address</StyledLabel>
-        {contract}
+        <StyledLabel>Auction address {props.address}</StyledLabel>
       </StyledDiv>
     </>
   )

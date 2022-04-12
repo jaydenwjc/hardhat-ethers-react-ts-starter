@@ -21,6 +21,7 @@ export function App() {
       <TabGroup />
       <SectionDivider />
       <ShowDutchAuction />
+      <SectionDivider />
       <Greeter />
     </StyledAppDiv>
   );

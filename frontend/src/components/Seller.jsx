@@ -6,6 +6,7 @@ import {
 } from 'react';
 import styled from "styled-components";
 import DutchAuctionArtifact from "../artifacts/contracts/DutchAuction.sol/DutchAuction.json"
+import { ShowDutchAuction } from './ShowDutchAuction';
 
 const StyledDiv = styled.div`
   display: grid;
@@ -40,21 +41,24 @@ export function Seller() {
   const context = useWeb3React();
   const { library, active } = context;
 
-  const [owner, setOwner] = useState('');
+  const [signer, setSigner] = useState();
   const [reservePrice, setReservePrice] = useState(0);
   const [numBlocksOpen, setNumBlocksOpen] = useState(0);
   const [priceDecrement, setPriceDecrement] = useState(0);
-  const [judgeAddress, setJudgeAddress] = useState('');
+  const [judgeAddress, setJudgeAddress] = useState();
 
   const [dutchAuctionContract, setDutchAuctionContract] = useState();
+  const [dutchAuctionContractAddress, setDutchAuctionContractAddress] = useState();
   
+  
+
   useEffect(() => {
     if (!library) {
-      setOwner(undefined);
+      setSigner(undefined);
       return;
     }
 
-    setOwner(library.getSigner());
+    setSigner(library.getSigner());
   }, [library]);
 
   function handleReservePriceInput(event) {
@@ -95,6 +99,8 @@ export function Seller() {
         setDutchAuctionContract(dutchAuction);
 
         window.alert(`Dutch Auction deployed to: ${dutchAuction.address}`);
+        
+        setDutchAuctionContractAddress(dutchAuction.address);
       } catch (error) {
         window.alert(
           'Error!' + (error && error.message ? `\n\n${error.message}` : '')
@@ -102,9 +108,8 @@ export function Seller() {
       }
 
     }
-    deployDuchAuctionContract(owner);
+    deployDuchAuctionContract(signer);
   }
-
   return (
     <>
       <StyledDiv>
@@ -150,10 +155,7 @@ export function Seller() {
         onClick={handleDeployContract}
       >Deploy Dutch Auction</StyledtButton>
       </p>
+      <ShowDutchAuction address={dutchAuctionContractAddress} />
     </>
   )
-}
-
-export function passToContract({dutchAuction, owner}) {
-  return dutchAuction, owner;
 }
