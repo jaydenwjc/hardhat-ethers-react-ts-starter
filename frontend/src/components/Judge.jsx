@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { ShowDutchAuction } from './ShowDutchAuction';
+import { SectionDivider } from './SectionDivider';
 
 const StyledDiv = styled.div`
   display: grid;
@@ -34,9 +36,13 @@ export function Judge() {
       <StyledDiv>
         
       </StyledDiv>
-      <StyledtButton
-      
-      >Finalize</StyledtButton>
+      <p>
+        <StyledtButton
+        
+        >Finalize</StyledtButton>
+      </p>
+      <SectionDivider />
+      <ShowDutchAuction />
     </>
   )
 }

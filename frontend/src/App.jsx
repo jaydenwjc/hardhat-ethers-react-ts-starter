@@ -20,9 +20,9 @@ export function App() {
       <SectionDivider />
       <TabGroup />
       <SectionDivider />
-      <ShowDutchAuction />
-      <SectionDivider />
-      <Greeter />
+      {/* <ShowDutchAuction /> */}
+      {/* <SectionDivider /> */}
+      {/* <Greeter /> */}
     </StyledAppDiv>
   );
 }

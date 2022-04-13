@@ -7,6 +7,7 @@ import {
 import styled from "styled-components";
 import DutchAuctionArtifact from "../artifacts/contracts/DutchAuction.sol/DutchAuction.json"
 import { ShowDutchAuction } from './ShowDutchAuction';
+import { SectionDivider } from './SectionDivider';
 
 const StyledDiv = styled.div`
   display: grid;
@@ -110,6 +111,25 @@ export function Seller() {
     }
     deployDuchAuctionContract(signer);
   }
+
+  // const displayAuction = () => {
+  //   const contract = new ethers.Contract(
+  //     dutchAuctionContractAddress,
+  //     DutchAuctionArtifact.abi,
+  //     signer
+  //   )
+  //   return (
+  //     <>
+  //       <StyledDiv>
+  //         <StyledLabel>Dutch Auction Address</StyledLabel>
+  //         {contract.address}
+  //         <StyledLabel>Reserve Price</StyledLabel>
+  //         {reservePrice}
+  //       </StyledDiv>
+  //     </>
+  //   )
+  // }
+
   return (
     <>
       <StyledDiv>
@@ -155,6 +175,7 @@ export function Seller() {
         onClick={handleDeployContract}
       >Deploy Dutch Auction</StyledtButton>
       </p>
+      <SectionDivider />
       <ShowDutchAuction address={dutchAuctionContractAddress} />
     </>
   )

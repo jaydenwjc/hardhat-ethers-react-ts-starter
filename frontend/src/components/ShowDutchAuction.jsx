@@ -23,6 +23,7 @@ const StyledLabel = styled.label`
 
 export function ShowDutchAuction(props) {
   const context = useWeb3React();
+  const address = props.address;
   const { library, active } = context;
   const [signer, setSigner] = useState();
   const [contract, setContract] = useState();
@@ -40,14 +41,24 @@ export function ShowDutchAuction(props) {
   //     setContract(undefined);
   //     return;
   //   }
-  //   const dutchAuctionContract = new ethers.Contract(address, DutchAuctionArtifact.abi, signer)
+  //   const dutchAuctionContract = new ethers.Contract(props, DutchAuctionArtifact.abi, signer)
   //   setContract(dutchAuctionContract);
   // }, [signer]);
   
   return (
     <>
       <StyledDiv>
-        <StyledLabel>Auction address {props.address}</StyledLabel>
+        <StyledLabel>Auction address</StyledLabel>
+        <div>
+          {address ? (
+            address
+          ) : (
+            <em>{`<Contract not yet deployed>`}</em>
+          )}
+        </div>
+        <div></div>
+        <StyledLabel>Reserve Price</StyledLabel>
+
       </StyledDiv>
     </>
   )

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { ShowDutchAuction } from "./ShowDutchAuction";
+import { SectionDivider } from "./SectionDivider";
 
 const StyledDiv = styled.div`
   display: grid;
@@ -40,9 +42,13 @@ export function Bidder() {
         placeholder="Bid price"
       ></StyledInput>
     </StyledDiv>
-    <StyledtButton
+    <p>
+      <StyledtButton
       
-    >Bid</StyledtButton>
+      >Bid</StyledtButton>
+    </p>
+    <SectionDivider />
+    <ShowDutchAuction />
   </>
   )
 }
