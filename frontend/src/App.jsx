@@ -19,11 +19,6 @@ export function App() {
       <SectionDivider />
       <WalletStatus />
       <SectionDivider />
-      {/* <TabGroup />
-      <SectionDivider /> */}
-      {/* <ShowDutchAuction /> */}
-      {/* <SectionDivider /> */}
-      {/* <Greeter /> */}
       <DutchAuction />
     </StyledAppDiv>
   );
