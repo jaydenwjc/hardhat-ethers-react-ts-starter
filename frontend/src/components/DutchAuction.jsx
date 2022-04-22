@@ -5,7 +5,7 @@ import {
   useState
 } from 'react';
 import styled from "styled-components";
-import DutchAuctionArtifact from "./DutchAuction.json"
+import DutchAuctionArtifact from "../artifacts/contracts/DutchAuction.sol/DutchAuction.json"
 import { SectionDivider } from './SectionDivider';
 
 const StyledDiv = styled.div`
