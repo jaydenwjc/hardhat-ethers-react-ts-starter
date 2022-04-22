@@ -41,6 +41,11 @@ export function Judge() {
         
         >Finalize</StyledtButton>
       </p>
+      <p>
+        <StyledtButton
+        
+        >Refund</StyledtButton>
+      </p>
       <SectionDivider />
       <ShowDutchAuction />
     </>

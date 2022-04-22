@@ -176,7 +176,23 @@ export function Seller() {
       >Deploy Dutch Auction</StyledtButton>
       </p>
       <SectionDivider />
-      <ShowDutchAuction address={dutchAuctionContractAddress} />
+      {/* <ShowDutchAuction address={dutchAuctionContractAddress} /> */}
+      <StyledDiv>
+        <StyledLabel>Auction address</StyledLabel>
+        <div>
+          {dutchAuctionContractAddress ? (
+            dutchAuctionContractAddress
+          ) : (
+            <em>{`<Contract not yet deployed>`}</em>
+          )}
+        </div>
+        <div></div>
+        <StyledLabel>Reserve Price</StyledLabel>
+            <p>
+            {reservePrice}
+            </p>
+            
+      </StyledDiv>
     </>
   )
 }

@@ -5,6 +5,7 @@ import { SectionDivider } from './components/SectionDivider';
 import { WalletStatus } from './components/WalletStatus';
 import {TabGroup} from './components/TabGroup'
 import { ShowDutchAuction } from './components/ShowDutchAuction';
+import { DutchAuction } from './components/DutchAuction';
 
 const StyledAppDiv = styled.div`
   display: grid;
@@ -18,11 +19,12 @@ export function App() {
       <SectionDivider />
       <WalletStatus />
       <SectionDivider />
-      <TabGroup />
-      <SectionDivider />
+      {/* <TabGroup />
+      <SectionDivider /> */}
       {/* <ShowDutchAuction /> */}
       {/* <SectionDivider /> */}
       {/* <Greeter /> */}
+      <DutchAuction />
     </StyledAppDiv>
   );
 }
