@@ -145,7 +145,7 @@ export function DutchAuction() {
       return;
     }
 
-    if (account == ownerAddress) {
+    if (account === ownerAddress) {
       window.alert('Owner cannot bid');
     }
 
@@ -159,7 +159,7 @@ export function DutchAuction() {
         if (!winner) return;
         setIsBidOpen(false);
         setWinnerAddress(account);
-        if (judgeAddress == '0x0000000000000000000000000000000000000000') {
+        if (judgeAddress === '0x0000000000000000000000000000000000000000') {
           window.alert(`Winner is ${winnerAddress}`)
         }
       } catch (error) {
